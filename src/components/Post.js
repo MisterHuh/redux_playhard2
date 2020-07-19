@@ -8,24 +8,6 @@ class Posts extends Component {
     }
   };
 
-  // componentWillMount() {
-  //   fetch("https://jsonplaceholder.typicode.com/posts")
-  //     .then(res => res.json)
-  //     .then(posts => {
-  //       console.log("posts is: ", posts);
-  //       this.setState({ posts: posts })
-  //     })
-  // }
-
-    // componentWillMount() {
-  //   fetch("https://jsonplaceholder.typicode.com/posts")
-  //     .then(res => res.json())
-  //     .then(data => {
-  //         console.log(data);
-  //         this.setState({ posts: data })
-  //     })
-  // }
-
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(res => res.json())
@@ -36,11 +18,6 @@ class Posts extends Component {
   }
 
   render() {
-  //   return (
-  //     <div>Hello World</div>
-  //   )
-  // }
-
 
     if (this.state.posts) {
 
@@ -61,8 +38,6 @@ class Posts extends Component {
       return null;
     }
   }
-
-
 
 }
 
