@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import { fetchPosts } from '../actions/postActions';
+
 class Posts extends Component {
   constructor(props) {
     super(props);
@@ -9,14 +12,13 @@ class Posts extends Component {
   };
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-    // fetch('api/retrieveAll.php')
-
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        this.setState({ posts: data })
-      })
+    // fetch("https://jsonplaceholder.typicode.com/posts")
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data);
+    //     this.setState({ posts: data })
+    //   })
+    this.props.fetchPosts();
   }
 
   render() {
@@ -43,4 +45,5 @@ class Posts extends Component {
 
 }
 
-export default Posts;
+// export default Posts;
+export default connect(null, { fetchPosts })(Posts)

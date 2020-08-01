@@ -7,9 +7,10 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_POSTS:
+      console.log("reducing");
       return {
         ...state,
-        items: action,payload
+        items: action.payload
       }
     default:
       return state;
