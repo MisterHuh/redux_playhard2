@@ -25,7 +25,7 @@ class Posts extends Component {
 
     if (this.state.posts) {
 
-      const postItems = this.state.posts.map(item => (
+      const postItems = this.props.posts.map(item => (
         <div key={item.id}>
           <h3>{item.title}</h3>
           <p>{item.body}</p>
@@ -45,5 +45,14 @@ class Posts extends Component {
 
 }
 
+
+// const mapStateToProps = state => ({
+//   posts: state.posts.items
+// })
+
+const mapStateToProps = state => ({
+  posts: state.posts.items
+});
+
 // export default Posts;
-export default connect(null, { fetchPosts })(Posts)
+export default connect(mapStateToProps, { fetchPosts })(Posts)
