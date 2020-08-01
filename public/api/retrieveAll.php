@@ -5,6 +5,8 @@ require_once("db_connection.php");
 set_exception_handler("error_handler");
 startUp();
 
+echo("reached");
+
 $query = "SELECT * FROM `2020` ORDER BY date DESC";
 
 $result = mysqli_query($conn, $query);
@@ -25,5 +27,6 @@ if ($allData === []) {
 } else {
   print(json_encode($allData));
 };
+
 
 ?>

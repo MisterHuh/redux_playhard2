@@ -10,6 +10,8 @@ class Posts extends Component {
 
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/posts")
+    // fetch('api/retrieveAll.php')
+
       .then(res => res.json())
       .then(data => {
         console.log(data);
